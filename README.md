@@ -32,6 +32,7 @@ In addition to all arguments accepted by `stdenv.mkDerivation`, the `mkPnpmPacka
 | `installNodeModules`     |                                                                             | `false`                      |
 | `installPackageFiles`    |                                                                             | `false`                      |
 | `installEnv`             | Environment variables that should be present during `pnpm install`          | `{}`                         |
+| `installParams`          | Additional parameters that should be present during `pnpm install`          | `[]`                         |
 | `buildEnv`               | Environment variables that should be present during build phase             | `{}`                         |
 | `noDevDependencies`      | Only download and install `dependencies`, not `devDependencies`             | `false`                      |
 | `extraNodeModuleSources` | Additional files that should be available during `pnpm install`             | `[]`                         |

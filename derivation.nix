@@ -39,6 +39,7 @@ in
     , installNodeModules ? false
     , installPackageFiles ? false
     , installEnv ? { }
+    , installParams ? [ ]
     , buildEnv ? { }
     , noDevDependencies ? false
     , extraNodeModuleSources ? [ ]
@@ -139,7 +140,8 @@ in
             pnpm install ${optionalString noDevDependencies "--prod"} \
               --ignore-scripts \
               --force \
-              --frozen-lockfile
+              --frozen-lockfile \
+              ${concatStringsSep " " installParams}
 
             runHook postConfigure
           '';
